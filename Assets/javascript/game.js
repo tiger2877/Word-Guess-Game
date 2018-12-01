@@ -17,13 +17,14 @@ window.addEventListener("DOMContentLoaded", function(){
 
   // Set up the secret word
   var randomWordArr = ["apple","banana","blackberry","cherry","orange","mango","plum","pear","pineapple","strawberry","watermelon"];
-  var computerGuess = randomWordArr[Math.floor(Math.random()*randomWordArr.length)]; //computer selects random letter
+  // Computer selects random letter
+  var computerGuess = randomWordArr[Math.floor(Math.random()*randomWordArr.length)];
   var questionIndex = 0;
 
   // MAIN PROCESS
 
 
-//function to display the number of letter whenn the browser is loaded
+//function to display the number of letter when the browser is loaded
 function startUp()
 {
     for (var i=0; i< computerGuess.length; i++)
@@ -36,10 +37,8 @@ function startUp()
 
 // Reset function
 function reset() {
-  guessesLeft = 9;
-  guessesSoFar.length = 0;
-  //containers.length = 0;
-  //guesses.classList.add("normal");
+  guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
+  guessesSoFar.length = 0; 
   document.getElementById("guesses").innerHTML = "";
   document.querySelector("#guessesLeft").innerHTML = guessesLeft;
   guessesSoFar = [];
@@ -91,14 +90,10 @@ window.onload = function()
       }
     }  
     
-  // If all letters have been found, change display to show a winner
+  // If all letters have been found, add wins
     if(foundCount === computerGuess.length){
-        //guesses.classList.add("winner");
         wins++;
         document.getElementById("guesses").innerHTML="Way to go! You\'ve guesesed corrrectly. You Won!'";
-        //guessesLeft = 9;                 //reseting the guesses back to 9 so that the user can play again
-        //containers.innerHTML = "";       //reseting the container
-        //incorrectLetters.innerHTML = ""; //resetting incorrect letter
         document.querySelector("#wins").innerHTML = wins; // Taking the tallies and displaying them in HTML    
         reset();
     }
@@ -111,9 +106,6 @@ window.onload = function()
     } 
     if (guessesLeft == 0){
         losses++;
-        //guessesLeft = 9;                 //reseting the guesses back to 9 so that the user can play again
-        //containers.innerHTML = "";       //reseting the container
-        //incorrectLetters.innerHTML = ""; //resetting incorrect letter
         document.querySelector("#losses").innerHTML = losses; // Taking the tallies and displaying them in HTML    
         document.getElementById("guesses").innerHTML='You didn\'t guess the correct letter. You lost. Let\'s try again.';
         reset();
