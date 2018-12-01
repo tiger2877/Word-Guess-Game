@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word Guess Game</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Linking CSS -->
+  <link rel="stylesheet" type="text/css" href="Assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+
+	<!-- Linking Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab|Yellowtail' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="jumbotron bg-primary text-center">
+      <h1>Word Guess Game</h1>
+  </div>
+
+		<div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Instructions</div>
+            <div class="panel-body text-center">
+                <h4>Click on the document and type your letter guess</h4>
+            </div>
+          </div>
+       </div>
+	   </div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Word Guess Game</div>
+            <div class="panel-body">
+              <p>Type your guess in the green box</p>
+              <p>Your Guesses so far:</p>
+              <div id="incorrect-letters"></div>
+
+              <p>Correct guesses:</p>
+              <div id="guesses">
+                <div class="letter" id="firstLetter"></div>
+                <div class="letter" id="secondLetter"></div>
+                <div class="letter" id="thirdLletter"></div>
+                <div class="letter" id="fourthLetter"></div>
+              </div>
+
+              <div id="game"> 
+                  <p>Total Wins: <span id="wins"><strong>0</strong></span></p>
+                  <p>Total Losses: <span id="losses"><strong>0</strong></span></p>
+                  <p>Guesses Left: <span id="guessesLeft"><strong>0</strong></span></p>
+                  <p>Your Guesses so far: <span id="guesses"><strong>0</strong></span></p>
+              </div> 
+              <button class="btn" id="boxGrow">Replay</button>
+          </div>
+			</div>
+	</div>
+			<div class="col-sm-6">
+        <div class="well text-center">
+          <div>
+            <img class="image" src="Assets/images/fruit.png" alt="Word Guess Game">
+          </div>
+			</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="Assets/javascript/game.js"></script>
+
+</body>
+</html>
