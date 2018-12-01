@@ -20,7 +20,8 @@ window.addEventListener("DOMContentLoaded", function(){
   // Computer selects random letter
   var computerGuess = randomWordArr[Math.floor(Math.random()*randomWordArr.length)];
   var questionIndex = 0;
-
+  var audio1 = new Audio('http://www.wavsource.com/snds_2018-06-03_5106726768923853/tv/simpsons/homer/whoo.wav');
+  var audio2 = new Audio('http://www.wavsource.com/snds_2018-06-03_5106726768923853/tv/simpsons/homer/whatever_homer.wav');
   // MAIN PROCESS
 
 
@@ -94,6 +95,7 @@ window.onload = function()
     if(foundCount === computerGuess.length){
         wins++;
         document.getElementById("guesses").innerHTML="Way to go! You\'ve guesesed corrrectly. You Won!'";
+        audio1.play();
         document.querySelector("#wins").innerHTML = wins; // Taking the tallies and displaying them in HTML    
         reset();
     }
@@ -108,6 +110,7 @@ window.onload = function()
         losses++;
         document.querySelector("#losses").innerHTML = losses; // Taking the tallies and displaying them in HTML    
         document.getElementById("guesses").innerHTML='You didn\'t guess the correct letter. You lost. Let\'s try again.';
+        audio2.play();
         reset();
     }  
   
