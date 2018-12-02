@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function(){
   var wins = 0;
   var losses = 0;
   var guessesLeft = 9;
-  var s;
+  var spaces;
   var answerArray= []; // array to display the number of letters based on the word
   var guessesSoFar = []; // array to push user choices to
   var incorrectLetters = document.getElementById("incorrect-letters");
@@ -86,8 +86,8 @@ window.onload = function()
         found = true;
         foundCount++;
         answerArray[i] = userInput;
-        s = answerArray.join(" "); //add elements of an array
-        document.getElementById("guesses").innerHTML = s;
+        spaces = answerArray.join(" "); //add elements of an array
+        document.getElementById("guesses").innerHTML = spaces;
       }
     }  
     
